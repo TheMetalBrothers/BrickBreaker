@@ -1,32 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './styles/App.scss'
+import 'bulma/css/bulma.min.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [score, setScore] = useState(0)
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <h1>Brick-Breaker</h1>
+      <div>
+        <button className='score' onClick={() => setScore((score) => score + 1)}>
+          Score: {score}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        BLAH BLAH BLAH
+      <p className="signInNotif">
+        Sign in to play online and try for a spot on the leaderboard!
       </p>
     </>
   )
