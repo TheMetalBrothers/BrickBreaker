@@ -3,6 +3,7 @@ import './App.css'
 import './styles/App.scss'
 import 'bulma/css/bulma.min.css';
 
+
 function App() {
   const [score, setScore] = useState(0)
 
