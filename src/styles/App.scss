@@ -83,5 +83,18 @@ body {
 button.score {
     position: absolute;
     top: 100px;
-    left: 50px;
+    left: 150px;
 }
+
+h3.leaderboardTitle {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+div.Leaderboard {
+    position: absolute;
+    left: 1150px;
+    top: 100px;
+    text-align: left;
+}
+
