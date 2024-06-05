@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 
-export default function useKeyboard(cb) {
-  function handleKeyPress(e) {
+interface CB { 
+  (x: number): void 
+}
+
+export default function useKeyboard(cb: CB) {
+  function handleKeyPress(e) { //React.FormEvent<HTMLInputElement>?
     e.preventDefault();
     cb(e.key);
   }

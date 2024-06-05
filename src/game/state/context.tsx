@@ -10,7 +10,7 @@ import createState from "./createState";
 import useKeyboard from "../hooks/useKeyboard";
 import { DIMENSIONS } from "../utils/constants";
 
-export const GameContext = React.createContext(1);
+export const GameContext = React.createContext(0);
 
 const initialState = createState(levelOne, GameContext);
 

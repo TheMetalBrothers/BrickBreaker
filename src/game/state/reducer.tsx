@@ -11,12 +11,24 @@ import {
 import levelOne from "../levels/one";
 import createState from "./createState";
 import axios from "axios";
-// import { useAuth0 } from "@auth0/auth0-react";
 
+interface stateProps {
+  isPlaying: boolean;
+  score: number;
+  lives: number;
+  ball: ballProps;
+}
 
-const reducer = (state, action) => {
+interface ballProps {
+  isMoving: boolean;
+}
 
-  // const { user, isAuthenticated } = useAuth0();
+interface actionProps {
+  payload: object; //number
+  type: string;
+}
+
+const reducer = (state: stateProps, action: actionProps) => {
   
   switch (action.type) {
     case START_GAME:
@@ -25,7 +37,7 @@ const reducer = (state, action) => {
       });
       case GAME_OVER:
         // eslint-disable-next-line no-case-declarations
-        const username = prompt("YOUR SCORE WAS: "+ state.score+"enter name for leaderboard entry");
+        const username = prompt("YOUR SCORE WAS: "+ state.score+" enter name for leaderboard entry");
         // only post if logged
         axios.post("http://localhost:3001/entry",{
           username: username,

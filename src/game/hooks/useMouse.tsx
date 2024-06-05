@@ -1,9 +1,13 @@
 import { useEffect } from "react";
 import { DIMENSIONS } from "../utils/constants";
 
-export default function useMouse(cb) {
+interface CB { 
+  (x: number): void 
+}
+
+export default function useMouse(cb: CB) {
   useEffect(() => {
-    function handleMouse(e) {
+    function handleMouse(e: { x: number; }) {
       let x;
       const offset = (window.innerWidth - DIMENSIONS.DEFAULT.WIDTH) / 2;
       if (e.x - offset < 0) {

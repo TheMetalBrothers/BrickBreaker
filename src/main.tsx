@@ -24,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Profile/>
     <Leaderboard/>
     <App />
+
   </Auth0Provider>
   </React.StrictMode>
 )

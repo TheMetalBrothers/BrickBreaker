@@ -14,8 +14,11 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
     "axios": "^1.6.8",
+    "express": "^4.19.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "@types/node": "^20.12.10",

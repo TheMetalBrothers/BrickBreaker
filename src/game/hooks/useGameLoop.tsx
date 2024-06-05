@@ -26,14 +26,18 @@ interface paddleProps {
 }
 
 interface brickProps {
-  xCol: number;
-  yCol: number;
-  bricks: number;
+  xCol?: number;
+  yCol?: number;
+  bricks?: bricksProps;
+  x?: number;
+  y?: number;
+  collided?: boolean;
+  id?: number;
 }
 
 interface bricksProps {
-  xCol: number;
-  yCol: number;
+  xCol?: number;
+  yCol?: number;
 }
 
 interface wallProps {
@@ -51,10 +55,11 @@ interface Actions {
 
 interface Payload {
   isMoving?: boolean;
-  x: number;
-  y: number;
-  dx: number;
-  dy: number;
+  x?: number;
+  y?: number;
+  dx?: number;
+  dy?: number;
+  bricks?: bricksProps;
 }
 
 
@@ -73,7 +78,7 @@ export default function useGameLoop(state: State, dispatch: React.Dispatch<{type
       if (state.lives < 0) {
         dispatch({
           type: actions.GAME_OVER,
-          payload: undefined
+          payload: { }
         });
         return dispatch({
           type: actions.MOVE_BALL,
@@ -128,7 +133,7 @@ export default function useGameLoop(state: State, dispatch: React.Dispatch<{type
         //reset logic
         dispatch({
           type: actions.DIE,
-          payload: undefined
+          payload: {}
         });
         return dispatch({
           type: actions.MOVE_BALL,

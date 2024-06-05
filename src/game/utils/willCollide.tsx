@@ -1,5 +1,28 @@
+interface rectProps {
+  x: number;
+  y: number;
+  dx: number;
+  dy: number;
+  xCurr?: boolean;
+  yCurr?: boolean
+  width: number;
+  height: number;
+  id?: number;
+}
 
-export default function willCollide(rect1, rect2) {
+interface rectProps2 {
+  x: number;
+  y: number;
+  dx?: number;
+  dy?: number;
+  xCurr?: boolean;
+  yCurr?: boolean
+  width: number;
+  height: number;
+  id?: number;
+}
+
+export default function willCollide(rect1: rectProps, rect2: rectProps2) {
   let x = false;
   let y = false;
   let xCurr = false;
@@ -8,6 +31,7 @@ export default function willCollide(rect1, rect2) {
 
   const rect1XNext = rect1.x + rect1.dx;
   const rect1YNext = rect1.y + rect1.dy;
+
 
   if (rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x) {
     xCurr = true;
