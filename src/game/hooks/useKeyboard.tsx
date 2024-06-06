@@ -5,7 +5,7 @@ interface CB {
 }
 
 export default function useKeyboard(cb: CB) {
-  function handleKeyPress(e) { //React.FormEvent<HTMLInputElement>?
+  function handleKeyPress(e) { //React.FormEvent<HTMLInputElement>
     e.preventDefault();
     cb(e.key);
   }

@@ -5,10 +5,10 @@ import { DIMENSIONS } from "../utils/constants";
 interface State {
   ball: Coordinates
   paddle: paddleProps
-  brick: brickProps
+  brick?: brickProps
   lives: number;
-  bricks: bricksProps;
-  walls: wallProps;
+  bricks?: bricksProps;
+  walls?: wallProps;
 }
 
 interface Coordinates {
@@ -35,11 +35,6 @@ interface brickProps {
   id?: number;
 }
 
-interface bricksProps {
-  xCol?: number;
-  yCol?: number;
-}
-
 interface wallProps {
   walls: string;
 }
@@ -60,6 +55,11 @@ interface Payload {
   dx?: number;
   dy?: number;
   bricks?: bricksProps;
+}
+
+interface bricksProps {
+  xCol?: number;
+  yCol?: number;
 }
 
 

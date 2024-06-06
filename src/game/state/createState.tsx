@@ -2,7 +2,7 @@ import { Context } from "react";
 import makeLevel from "../levels/makeLevel";
 import { DIMENSIONS } from "../utils/constants";
 
-export default function createState(level: string[], overrides: Context<number> | undefined) {
+export default function createState(level: string[], overrides: Context<number> | undefined | {isPlaying: true}) {
   return {
     isPlaying: false,
     score: 0,

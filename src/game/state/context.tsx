@@ -15,7 +15,7 @@ export const GameContext = React.createContext(0);
 const initialState = createState(levelOne, GameContext);
 
 interface Props {
-  children: ReactElement
+  children: ReactElement;
 }
 
 export default function GameProvider(props: Props) {
@@ -40,7 +40,7 @@ export default function GameProvider(props: Props) {
       });
   });
 
-  useKeyboard((key: string) => {
+  useKeyboard((key: number | string) => {
     if (!state.ball.isMoving && key === " ") {
       dispatch({
         type: actions.PRESS_START,

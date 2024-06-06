@@ -17,6 +17,7 @@ interface stateProps {
   score: number;
   lives: number;
   ball: ballProps;
+  // bricks: Array<number>
 }
 
 interface ballProps {
@@ -24,8 +25,14 @@ interface ballProps {
 }
 
 interface actionProps {
-  payload: object; //number
+  payload: payloadProps; //number?
   type: string;
+}
+
+interface payloadProps {
+  x?: number;
+  bricks?: Array<number>
+  isMoving?: boolean;
 }
 
 const reducer = (state: stateProps, action: actionProps) => {
@@ -38,7 +45,7 @@ const reducer = (state: stateProps, action: actionProps) => {
       case GAME_OVER:
         // eslint-disable-next-line no-case-declarations
         const username = prompt("YOUR SCORE WAS: "+ state.score+" enter name for leaderboard entry");
-        // only post if logged
+        // todo: only post if logged
         axios.post("http://localhost:3001/entry",{
           username: username,
           highscore: state.score,
