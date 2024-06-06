@@ -1,0 +1,5 @@
+.ball {
+  border-radius: 50%;
+  background-color: #0a00bf;
+  position: absolute;
+}

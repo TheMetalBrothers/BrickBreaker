@@ -8,12 +8,13 @@ import LoginButton from './components/LoginButton.tsx';
 // import LogoutButton from './components/LogoutButton.tsx';
 import Profile from './components/Profile.tsx';
 import NavBar from './components/Navbar.tsx';
+import Leaderboard from './components/Leaderboard.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Auth0Provider
     domain="dev-uqs61mphrgltdtik.us.auth0.com"
-    clientId={import.meta.env.CLIENT_ID}
+    clientId={import.meta.env.VITE_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin
     }}
@@ -21,7 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <NavBar/>
     <LoginButton/>
     <Profile/>
+    <Leaderboard/>
     <App />
+
   </Auth0Provider>
   </React.StrictMode>
 )
